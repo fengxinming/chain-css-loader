@@ -52,9 +52,10 @@ npm install chain-css-loader --save-dev
 These are the optional config options for <code>new UmiRule</code>
 
 * optional options
+  * `cssPublicPath` 默认 '/', css在浏览器中被访问的跟路径
   * `cwd` 默认 `process.cwd()`
   * `modulesWithAffix` 默认 true, 对 *.module.[ext] 结尾的文件启用 CSS Modules
-  * `modules` 默认 false, 只对 *.module.[ext] 结尾的文件启用 CSS Modules; 如果设置为 true, 对所有 *.(css|scss|sass|less|styl(us)?) 启用 CSS Modules
+  * `modules` 默认 false, 只对 *.module.[ext] 结尾的文件启用 CSS Modules; 如果设置为 true, 对所有 *.(css|scss|sass|less|styl(us)?) 启用 CSS Modules
   * `sourceMap` 默认 true, 是否生成 .map 文件, 只在非开发环境生效
   * `compress` 默认 true, 是否压缩css, 只在非开发环境生效
   * `usePoststylus` 默认 false, 是否自行使用 poststylus 插件替换内置 postcss-loader
@@ -68,6 +69,7 @@ These are the optional config options for <code>new UmiRule</code>
     * `cssDeclarationSorter` 默认 false
   * `stylus` stylus-loader 配置
     * `test` 默认 /\.styl(us)?$/
+    * `modules` 默认 /\.module\.styl(us)?$/
     * `loader` 默认 'stylus-loader'
     * `options` stylus 配置参数
 

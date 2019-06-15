@@ -1,0 +1,44 @@
+{
+  "name": "chain-css-loader",
+  "version": "1.0.0",
+  "description": "create css rule with webpack-chain",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --detectOpenHandles --config jest.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengxinming/chain-css-loader.git"
+  },
+  "keywords": [
+    "webpack",
+    "webpack-chain",
+    "loader",
+    "css",
+    "stylus",
+    "less",
+    "sass",
+    "postcss",
+    "umi"
+  ],
+  "author": "Jesse Feng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fengxinming/chain-css-loader/issues"
+  },
+  "homepage": "https://github.com/fengxinming/chain-css-loader#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}

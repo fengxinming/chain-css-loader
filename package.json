@@ -1,6 +1,6 @@
 {
   "name": "chain-css-loader",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "create css rule with webpack-chain",
   "main": "index.js",
   "directories": {
@@ -22,7 +22,8 @@
     "less",
     "sass",
     "postcss",
-    "umi"
+    "umi",
+    "create-react-app"
   ],
   "author": "Jesse Feng",
   "license": "MIT",

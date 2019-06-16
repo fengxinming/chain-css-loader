@@ -1,3 +1,9 @@
+# chain-css-loader
+
+> create css rule with webpack-chain
+
+[![npm package](https://nodei.co/npm/chain-css-loader.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/chain-css-loader) [![NPM version](https://img.shields.io/npm/v/chain-css-loader.svg?style=flat)](https://npmjs.org/package/chain-css-loader) [![NPM Downloads](https://img.shields.io/npm/dm/chain-css-loader.svg?style=flat)](https://npmjs.org/package/chain-css-loader)
+
 <div align="center">
   <img width="180" height="180" vspace="20"
     src="https://cdn.worldvectorlogo.com/logos/css-3.svg">
@@ -7,12 +13,6 @@
   </a>
 </div>
 
-# chain-css-loader
-
-> create css rule with webpack-chain
-
-[![npm package](https://nodei.co/npm/chain-css-loader.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/chain-css-loader) [![NPM version](https://img.shields.io/npm/v/chain-css-loader.svg?style=flat)](https://npmjs.org/package/chain-css-loader) [![NPM Downloads](https://img.shields.io/npm/dm/chain-css-loader.svg?style=flat)](https://npmjs.org/package/chain-css-loader)
-
 ---
 
 ## Table of contents
@@ -21,6 +21,9 @@
   - [API Reference](#API-Reference)
   - [Usage](#Usage)
     - [Example for Umi](#Example-for-Umi)
+      - [Sample for Umi](#Sample-for-Umi)
+      - [Advanced Features for Umi](#Advanced-Features-for-Umi)
+    - [Example for create-react-app](#Example-for-create-react-app)
       - [Sample](#Sample)
       - [Advanced Features](#Advanced-Features)
   - [Examples](#Examples)
@@ -85,9 +88,9 @@ These are the optional config options for <code>new UmiRule</code>
 npm install stylus stylus-loader --save-dev
 ```
 
-#### Sample
+#### Sample for Umi
 
-- Write the following code to the file `.umirc.js` or `.umirc.local.js`
+- Put the following code in the file `.umirc.js` or `.umirc.local.js`
 
 ```
 import { UmiRule } from 'chain-css-loader';
@@ -105,7 +108,7 @@ export default {
 }
 ```
 
-#### Advanced Features
+#### Advanced Features for Umi
 
 - Use [poststylus](https://github.com/seaneking/poststylus) instead of [postcss](https://github.com/postcss/postcss)
 
@@ -155,8 +158,76 @@ Firefox ESR
 not ie < 9
 ```
 
+### Example for create-react-app
+
+- Below is an example for using [stylus](https://github.com/stylus/stylus) in [umi](https://github.com/umijs/umi)
+
+```
+npm install stylus stylus-loader --save-dev
+```
+
+#### Sample
+
+- Put the following code in the file `config-overrides.js`
+
+```
+const { RewiredRule } = require('chain-css-loader');
+
+module.exports = {
+  webpack(config, env) {
+    const rule = new RewiredRule(config, {
+      modules: true
+    });
+    rule.useStylus();
+
+    return config;
+  }
+};
+```
+
+#### Advanced Features
+
+- Use [poststylus](https://github.com/seaneking/poststylus) instead of [postcss](https://github.com/postcss/postcss)
+
+```
+npm install poststylus postcss-flexbugs-fixes autoprefixer rucksack-css --save-dev
+```
+
+- Put the following code in the file `.umirc.js` or `.umirc.local.js`
+
+```
+const poststylus = require('poststylus');
+const { RewiredRule } = require('chain-css-loader');
+
+module.exports = {
+  webpack(config, env) {
+    const rule = new RewiredRule(config, {
+      modules: true,
+      usePoststylus: true,
+      stylus: {
+        options: {
+          use: [
+            poststylus([
+              require('postcss-flexbugs-fixes'),
+              require('autoprefixer')({
+                flexbox: 'no-2009'
+              }),
+              'rucksack-css'
+            ])
+          ]
+        }
+      }
+    });
+    rule.useStylus();
+
+    return config;
+  }
+};
+```
+
 ---
 
 ## Examples
 
   - [umi](examples/umi)
+  - [create-react-app](examples/create-react-app)

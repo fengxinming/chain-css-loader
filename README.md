@@ -42,13 +42,23 @@ npm install chain-css-loader --save-dev
 
 * chain-css-loader
   * UmiRule
-    * new UmiRule( webpackConfig [, options] )
+    * new UmiRule( webpackChain [, options] )
       * _instance_
         * useStylus() ⇒ <code>UmiRule</code>
         * useLess() ⇒ <code>UmiRule</code>
         * useSass() ⇒ <code>UmiRule</code>
         * useCss() ⇒ <code>UmiRule</code>
         * extractCss() ⇒ <code>UmiRule</code>
+
+      * _static_
+  * RewiredRule
+    * new RewiredRule( webpackConfig [, options] )
+      * _instance_
+        * useStylus() ⇒ <code>RewiredRule</code>
+        * useLess() ⇒ <code>RewiredRule</code>
+        * useSass() ⇒ <code>RewiredRule</code>
+        * useCss() ⇒ <code>RewiredRule</code>
+        * extractCss() ⇒ <code>RewiredRule</code>
 
       * _static_
 

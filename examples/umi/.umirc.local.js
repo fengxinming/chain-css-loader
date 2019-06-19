@@ -28,5 +28,6 @@ export default {
       }
     });
     rule.useStylus();
+    return config;
   }
 }

@@ -114,6 +114,7 @@ export default {
       modules: true // start up CSS modules
     });
     rule.useStylus();
+    return config;
   }
 }
 ```
@@ -155,6 +156,7 @@ export default {
       }
     });
     rule.useStylus();
+    return config;
   }
 }
 ```

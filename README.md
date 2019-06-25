@@ -1,6 +1,6 @@
 # chain-css-loader
 
-> create css rule with webpack-chain
+> Easy to use stylus less or sass in [umi](https://github.com/umijs/umi) or [create-react-app](https://github.com/facebook/create-react-app).(support css-loader@2 currently)
 
 [![npm package](https://nodei.co/npm/chain-css-loader.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/chain-css-loader) [![NPM version](https://img.shields.io/npm/v/chain-css-loader.svg?style=flat)](https://npmjs.org/package/chain-css-loader) [![NPM Downloads](https://img.shields.io/npm/dm/chain-css-loader.svg?style=flat)](https://npmjs.org/package/chain-css-loader)
 
@@ -100,7 +100,7 @@ npm install stylus stylus-loader --save-dev
 
 #### Sample for Umi
 
-- Put the following code in the file `.umirc.js` or `.umirc.local.js`
+- Put the following code in the file `.umirc.js`
 
 ```
 import { UmiRule } from 'chain-css-loader';
@@ -127,7 +127,7 @@ export default {
 npm install poststylus postcss-flexbugs-fixes autoprefixer rucksack-css --save-dev
 ```
 
-- Put the following code in the file `.umirc.js` or `.umirc.local.js`
+- Put the following code in the file `.umirc.js`
 
 ```
 import poststylus from 'poststylus';
@@ -172,7 +172,7 @@ not ie < 9
 
 ### Example for create-react-app
 
-- Below is an example for using [stylus](https://github.com/stylus/stylus) in [umi](https://github.com/umijs/umi)
+- Below is an example for using [stylus](https://github.com/stylus/stylus) in [create-react-app](https://github.com/facebook/create-react-app)
 
 ```
 npm install stylus stylus-loader --save-dev
@@ -205,7 +205,7 @@ module.exports = {
 npm install poststylus postcss-flexbugs-fixes autoprefixer rucksack-css --save-dev
 ```
 
-- Put the following code in the file `.umirc.js` or `.umirc.local.js`
+- Put the following code in the file `config-overrides.js`
 
 ```
 const poststylus = require('poststylus');

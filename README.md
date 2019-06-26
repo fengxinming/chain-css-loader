@@ -27,6 +27,7 @@
       - [Sample](#Sample)
       - [Advanced Features](#Advanced-Features)
   - [Examples](#Examples)
+  - [Release History](#Release-History)
 
 ---
 
@@ -243,3 +244,19 @@ module.exports = {
 
   - [umi](examples/umi)
   - [create-react-app](examples/create-react-app)
+
+---
+
+## Release History
+
+  * 1.1.2
+    * 修复对`css-loader`传参问题
+  
+  * 1.1.1
+    * 修复对 CSS Modules 的支持问题
+
+  * 1.1.0
+    * 支持在`create-react-app`脚手架中使用`stylus`、`less`、`sass`等
+
+  * 1.0.0
+    * 支持在`umi`项目中使用`stylus`等

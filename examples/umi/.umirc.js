@@ -53,7 +53,7 @@ export default {
         }
       }
     });
-    rule.useStylus();
+    rule.useStylus().extractCss();
     return config;
   }
 }

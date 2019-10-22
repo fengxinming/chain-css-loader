@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
+    "cssnano": "^4.1.10",
     "eslint": "^5.4.0",
     "eslint-config-umi": "^1.4.0",
     "eslint-plugin-flowtype": "^2.50.0",
@@ -27,8 +28,8 @@
     "rucksack-css": "^1.0.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
-    "umi": "^2.7.0",
-    "umi-plugin-react": "^1.8.0"
+    "umi": "^2.10.6",
+    "umi-plugin-react": "^1.12.7"
   },
   "lint-staged": {
     "*.{js,jsx}": [

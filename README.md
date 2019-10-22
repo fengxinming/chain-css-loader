@@ -1,6 +1,6 @@
 # chain-css-loader
 
-> Easy to use stylus less or sass in [umi](https://github.com/umijs/umi) or [create-react-app](https://github.com/facebook/create-react-app).(support css-loader@2 currently)
+> 简化在 [umi](https://github.com/umijs/umi) 和 [create-react-app](https://github.com/facebook/create-react-app) 中使用 [stylus](http://stylus-lang.com/), 也支持`less`和`sass`.(目前支持 css-loader@2)
 
 [![npm package](https://nodei.co/npm/chain-css-loader.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/chain-css-loader) [![NPM version](https://img.shields.io/npm/v/chain-css-loader.svg?style=flat)](https://npmjs.org/package/chain-css-loader) [![NPM Downloads](https://img.shields.io/npm/dm/chain-css-loader.svg?style=flat)](https://npmjs.org/package/chain-css-loader)
 
@@ -15,23 +15,19 @@
 
 ---
 
-## Table of contents
+## 目录
 
-  - [Installation](#Installation)
-  - [API Reference](#API-Reference)
-  - [Usage](#Usage)
-    - [Example for Umi](#Example-for-Umi)
-      - [Sample for Umi](#Sample-for-Umi)
-      - [Advanced Features for Umi](#Advanced-Features-for-Umi)
-    - [Example for create-react-app](#Example-for-create-react-app)
-      - [Sample](#Sample)
-      - [Advanced Features](#Advanced-Features)
-  - [Examples](#Examples)
-  - [Release History](#Release-History)
+  - [安装](#安装)
+  - [API 相关](#API-相关)
+  - [使用说明](#使用说明)
+    - [在 umijs 中使用添加stylus支持](#在-umijs-中使用添加stylus支持)
+    - [在 create-react-app 中使用添加stylus支持](#在-create-react-app-中使用添加stylus支持)
+  - [使用事例](#使用事例)
+  - [更新记录](#更新记录)
 
 ---
 
-## Installation
+## 安装
 
 ```
 npm install chain-css-loader --save-dev
@@ -39,7 +35,7 @@ npm install chain-css-loader --save-dev
 
 ---
 
-## API Reference
+## API-相关
 
 * chain-css-loader
   * UmiRule
@@ -63,9 +59,9 @@ npm install chain-css-loader --save-dev
 
       * _static_
 
-These are the optional config options for <code>new UmiRule</code>
+`new UmiRule`
 
-* optional options
+* 可选参数
   * `cssPublicPath` 默认 '/', css在浏览器中被访问的跟路径
   * `cwd` 默认 `process.cwd()`
   * `modulesWithAffix` 默认 true, 对 *.module.[ext] 结尾的文件启用 CSS Modules
@@ -86,22 +82,21 @@ These are the optional config options for <code>new UmiRule</code>
     * `modules` 默认 /\.module\.styl(us)?$/
     * `loader` 默认 'stylus-loader'
     * `options` stylus 配置参数
+  * `ssr` 跟 umijs 保持一致
 
 ---
 
-## Usage
+## 使用说明
 
-### Example for Umi
-
-- Below is an example for using [stylus](https://github.com/stylus/stylus) in [umi](https://github.com/umijs/umi)
+### 在 umijs 中使用添加stylus支持
 
 ```
 npm install stylus stylus-loader --save-dev
 ```
 
-#### Sample for Umi
+#### 一般使用
 
-- Put the following code in the file `.umirc.js`
+- 添加以下代码至 `.umirc.js`
 
 ```
 import { UmiRule } from 'chain-css-loader';
@@ -120,15 +115,15 @@ export default {
 }
 ```
 
-#### Advanced Features for Umi
+#### 高级特性
 
-- Use [poststylus](https://github.com/seaneking/poststylus) instead of [postcss](https://github.com/postcss/postcss)
+- 使用 [poststylus](https://github.com/seaneking/poststylus) 替换 [postcss](https://github.com/postcss/postcss)
 
 ```
 npm install poststylus postcss-flexbugs-fixes autoprefixer rucksack-css --save-dev
 ```
 
-- Put the following code in the file `.umirc.js`
+- 添加以下代码至 `.umirc.js`
 
 ```
 import poststylus from 'poststylus';
@@ -162,7 +157,7 @@ export default {
 }
 ```
 
-- Copy the following code to the file `.browserslistrc` if it exists, or create a new file named `.browserslistrc` and then put below in the file
+- 运行`umijs`时可能报 browserslist 相关警告，需要添加以下代码至 `.browserslistrc`
 
 ```
 >1%
@@ -171,17 +166,15 @@ Firefox ESR
 not ie < 9
 ```
 
-### Example for create-react-app
-
-- Below is an example for using [stylus](https://github.com/stylus/stylus) in [create-react-app](https://github.com/facebook/create-react-app)
+### 在 create-react-app 中使用添加stylus支持
 
 ```
 npm install stylus stylus-loader --save-dev
 ```
 
-#### Sample
+#### 简单使用
 
-- Put the following code in the file `config-overrides.js`
+- 添加以下代码至 `config-overrides.js`, 前提是使用了`react-app-rewired`模块, 而不是导出webpack配置
 
 ```
 const { RewiredRule } = require('chain-css-loader');
@@ -198,15 +191,15 @@ module.exports = {
 };
 ```
 
-#### Advanced Features
+#### 高级特性
 
-- Use [poststylus](https://github.com/seaneking/poststylus) instead of [postcss](https://github.com/postcss/postcss)
+- 使用 [poststylus](https://github.com/seaneking/poststylus) 替换 [postcss](https://github.com/postcss/postcss)
 
 ```
 npm install poststylus postcss-flexbugs-fixes autoprefixer rucksack-css --save-dev
 ```
 
-- Put the following code in the file `config-overrides.js`
+- 添加以下代码至 `config-overrides.js`
 
 ```
 const poststylus = require('poststylus');
@@ -240,14 +233,20 @@ module.exports = {
 
 ---
 
-## Examples
+## 使用事例
 
   - [umi](examples/umi)
   - [create-react-app](examples/create-react-app)
 
 ---
 
-## Release History
+## 更新记录
+
+  * 1.1.4
+    * 增加参数ssr，跟umijs保持一致
+
+  * 1.1.3
+    * 更新`lodash`
 
   * 1.1.2
     * 修复对`css-loader`传参问题

@@ -242,6 +242,9 @@ module.exports = {
 
 ## 更新记录
 
+  * 1.1.4
+    * 增加参数ssr，跟umijs保持一致
+
   * 1.1.3
     * 更新`lodash`
 
